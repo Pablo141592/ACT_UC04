@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{integrantes}}
+{% endblock %}
+
+{% block content %}
+<!--Comentario en HTML-->
+
+    <h1 class="title"> {{titulo}} </h1>
+
+        <ul>
+            {% for integrantes in integrantes %}
+              <li>{{ forloop.counter}}.{{integrantes}}</li>
+              {% empty%}
+                
+            {% endfor %}
+        </ul>
+
+    
+    
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{titulo}}
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    <h1 class="title">Bienvenidos</h1>
+    <h2>A la UC 04 de Lenguaje de Programacion 03</h2>
+    {%load filters%}
+    {{"UC 04 lp3"|saludo|safe}}
+    {{ block.super}}    
+{% endblock %}

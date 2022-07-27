@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es"
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block tittle %}
+            {{titulo}}
+            {% endblock %}
+            
+        </title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    </head>
+    <body>
+        <header style="background-color:#275087;">
+            <div id="logotipo">               
+                <h1> LP 03 | UC04  </h1>
+            </div>
+        </header>
+        <nav>
+            <ul>
+            <li>
+                 <a href="{% url 'integrantes' %}"> Integrantes</a>
+            </li>
+            <li>
+                 <a href="{% url 'saludo' %}"> Saludo</a>
+            </li>
+            <li>
+                <a href="{% url 'crear_estudiante' %}"> Crear Estudiante</a>
+            </li>           
+            </ul>
+        </nav>             
+            <div class="barra">
+                <span class="esquina-izquierda"></span>
+                <span class="relleno-barra"></span>
+                <span class="esquina-derecha"></span>
+    
+            </div>
+              
+            <div id="content">
+                <div class="box">
+                
+                    {% block content %}
+                        
+                    {% endblock %}
+    
+                </div>
+            </div>
+            <footer>
+                UNTELS  &COPY; Condori / Acuña / Trigo - {% now "d/m/y h:m:s" %}
+            </footer>
+    </body>
+</html>
